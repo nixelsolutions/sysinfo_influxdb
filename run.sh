@@ -12,3 +12,4 @@ SYSINFO_INFLUXDB_CMD="sysinfo_influxdb -D -i $SYSINFO_INTERVAL -h ${INFLUXDB_HOS
 
 echo "=> Running sysinfo_linux daemon: $SYSINFO_INFLUXDB_CMD"
 ./$SYSINFO_INFLUXDB_CMD
+
