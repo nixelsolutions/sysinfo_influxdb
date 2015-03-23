@@ -1,0 +1,493 @@
+{
+  "id": null,
+  "title": "Sysinfo",
+  "originalTitle": "Sysinfo",
+  "tags": [],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": false,
+  "rows": [
+    {
+      "title": "Row1",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "CPU Usage",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "id": 1,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 0,
+          "linewidth": 1,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "idle",
+              "series": "sysinfo.cpu",
+              "query": "select mean(idle) from \"sysinfo.cpu\" where $timeFilter group by time($interval) order asc",
+              "alias": "IDLE",
+              "fill": ""
+            },
+            {
+              "target": "",
+              "function": "mean",
+              "column": "wait",
+              "series": "sysinfo.cpu",
+              "query": "select mean(wait) from \"sysinfo.cpu\" where $timeFilter group by time($interval) order asc",
+              "alias": "WAIT"
+            },
+            {
+              "target": "",
+              "function": "mean",
+              "column": "user",
+              "series": "sysinfo.cpu",
+              "query": "select mean(user) from \"sysinfo.cpu\" where $timeFilter group by time($interval) order asc",
+              "alias": "USER"
+            },
+            {
+              "target": "",
+              "function": "mean",
+              "column": "sys",
+              "series": "sysinfo.cpu",
+              "query": "select mean(sys) from \"sysinfo.cpu\" where $timeFilter group by time($interval) order asc",
+              "alias": "SYSTEM"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Load Average",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "id": 2,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 0,
+          "linewidth": 1,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "one",
+              "series": "sysinfo.load",
+              "query": "select mean(one) from \"sysinfo.load\" where $timeFilter group by time($interval) order asc",
+              "alias": "1min Load",
+              "hide": false
+            },
+            {
+              "target": "",
+              "function": "mean",
+              "column": "five",
+              "series": "sysinfo.load",
+              "query": "select mean(five) from \"sysinfo.load\" where $timeFilter group by time($interval) order asc",
+              "alias": "5min Load"
+            },
+            {
+              "target": "",
+              "function": "mean",
+              "column": "fifteen",
+              "series": "sysinfo.load",
+              "query": "select mean(fifteen) from \"sysinfo.load\" where $timeFilter group by time($interval) order asc",
+              "alias": "15min Load"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "RAM Usage",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "id": 3,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)",
+            "thresholdLine": false
+          },
+          "lines": true,
+          "fill": 0,
+          "linewidth": 1,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false,
+            "alignAsTable": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "total",
+              "series": "sysinfo.mem",
+              "query": "select mean(total) from \"sysinfo.mem\" where $timeFilter group by time($interval) order asc",
+              "rawQuery": false,
+              "alias": "Total"
+            },
+            {
+              "function": "mean",
+              "column": "used",
+              "series": "sysinfo.mem",
+              "query": "select mean(used) from \"sysinfo.mem\" where $timeFilter group by time($interval) order asc",
+              "alias": "Used"
+            },
+            {
+              "function": "mean",
+              "column": "free",
+              "series": "sysinfo.mem",
+              "query": "select mean(free) from \"sysinfo.mem\" where $timeFilter group by time($interval) order asc",
+              "rawQuery": false,
+              "alias": "Free"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "leftYAxisLabel": "",
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Swap Usage",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "id": 5,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": 0,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 0,
+          "linewidth": 1,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "total",
+              "series": "sysinfo.swap",
+              "query": "select mean(total) from \"sysinfo.swap\" where $timeFilter group by time($interval) order asc",
+              "alias": "Total"
+            },
+            {
+              "function": "mean",
+              "column": "free",
+              "series": "sysinfo.swap",
+              "query": "select mean(free) from \"sysinfo.swap\" where $timeFilter group by time($interval) order asc",
+              "alias": "Free"
+            },
+            {
+              "function": "mean",
+              "column": "used",
+              "series": "sysinfo.swap",
+              "query": "select mean(used) from \"sysinfo.swap\" where $timeFilter group by time($interval) order asc",
+              "alias": "Used"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": [
+        {
+          "title": "Disks",
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "graph",
+          "id": 4,
+          "datasource": null,
+          "renderer": "flot",
+          "x-axis": true,
+          "y-axis": true,
+          "y_formats": [
+            "short",
+            "short"
+          ],
+          "grid": {
+            "leftMax": null,
+            "rightMax": null,
+            "leftMin": null,
+            "rightMin": null,
+            "threshold1": null,
+            "threshold2": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "lines": true,
+          "fill": 0,
+          "linewidth": 1,
+          "points": false,
+          "pointradius": 5,
+          "bars": false,
+          "stack": false,
+          "percentage": false,
+          "legend": {
+            "show": true,
+            "values": false,
+            "min": false,
+            "max": false,
+            "current": false,
+            "total": false,
+            "avg": false
+          },
+          "nullPointMode": "connected",
+          "steppedLine": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "shared": false
+          },
+          "targets": [
+            {
+              "function": "mean",
+              "column": "read_ios",
+              "series": "sysinfo.disks",
+              "query": "select mean(read_ios) from \"sysinfo.disks\" where $timeFilter group by time($interval) order asc",
+              "alias": "Read IOS"
+            },
+            {
+              "function": "mean",
+              "column": "write_ios",
+              "series": "sysinfo.disks",
+              "query": "select mean(write_ios) from \"sysinfo.disks\" where $timeFilter group by time($interval) order asc",
+              "alias": "Write IOS"
+            }
+          ],
+          "aliasColors": {},
+          "seriesOverrides": [],
+          "links": []
+        }
+      ]
+    },
+    {
+      "title": "New row",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "panels": []
+    }
+  ],
+  "nav": [
+    {
+      "type": "timepicker",
+      "enable": true,
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "now": true,
+      "collapse": false,
+      "notice": false
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "refresh": false,
+  "version": 6,
+  "hideAllLegends": false
+}
