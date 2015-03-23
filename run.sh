@@ -10,6 +10,7 @@ echo "${INFLUXDB_PASS}" > $SYSINFO_SECRET
 
 SYSINFO_INFLUXDB_CMD="sysinfo_influxdb -D -i $SYSINFO_INTERVAL -h ${INFLUXDB_HOST}:${INFLUXDB_PORT} -d ${INFLUXDB_NAME} -u ${INFLUXDB_USER} -s $SYSINFO_SECRET"
 
+ping -c 10 ${INFLUXDB_HOST} >/dev/null 2>&1
 echo "=> Running sysinfo_linux daemon: $SYSINFO_INFLUXDB_CMD"
 ./$SYSINFO_INFLUXDB_CMD
 
