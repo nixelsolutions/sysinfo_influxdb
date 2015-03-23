@@ -3,7 +3,7 @@
 [ "${INFLUXDB_HOST}" == "**ChangeMe**" ] && echo "=> ERROR: you must set INFLUXDB_HOST environment variable." && exit 1
 [ "${INFLUXDB_NAME}" == "**ChangeMe**" ] && echo "=> ERROR: you must set INFLUXDB_NAME environment variable." && exit 1
 
-SYSINFO_INTERVAL=${SYSINFO_INTERVAL:-1m}
+SYSINFO_INTERVAL=${SYSINFO_INTERVAL:-5m}
 SYSINFO_SECRET=sysinfo.secret
 
 echo "${INFLUXDB_PASS}" > $SYSINFO_SECRET
