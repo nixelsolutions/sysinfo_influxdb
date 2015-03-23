@@ -17,7 +17,7 @@ To run the image:
 Configure the connection to InfluxDB
 ------------------------------------
 
-`nixelsolutions/sysinfo_influxdb` needs to know the information of your InfluxDB instante used to send metrics to. Please provide the following environment variables when running your sysinfo_influxdb container:
+`nixelsolutions/sysinfo_influxdb` needs to know the information of your InfluxDB instance used to send metrics to. Please provide the following environment variables when running your sysinfo_influxdb container:
 
 ```
 INFLUXDB_HOST=**ChangeMe**          Host of your InfluxDB (without protocol)
