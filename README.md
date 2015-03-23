@@ -35,7 +35,7 @@ Here is an example:
 Sysinfo metric collection interval
 ----------------------------------
 
-By default `nixelsolutions/sysinfo_influxdb` will start sysinfo_influxdb process with -i 5m, that is sysinfo will send metric values every 5 minutes to InflusDB by default.
+By default `nixelsolutions/sysinfo_influxdb` will start sysinfo_influxdb process with -i 5m, that is sysinfo will send metric values every 5 minutes to InfluxDB by default.
 
 If you want to set a different interval value please set SYSINFO_INTERVAL environment variable
 
